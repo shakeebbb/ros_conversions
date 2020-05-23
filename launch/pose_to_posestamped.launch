@@ -1,0 +1,11 @@
+<launch>
+	<node name="pose_to_posestamped" pkg="ros_conversions" type="pose_to_posestamped" output="screen">
+			<remap from="pose_to_posestamped/pose_in" to="pose_to_posestamped/pose_in"/>
+			<remap from="pose_to_posestamped/posestamped_in" to="pose_to_posestamped/posestamped_in"/>
+			
+			<remap from="pose_to_posestamped/pose_out" to="pose_to_posestamped/pose_out"/>
+			<remap from="pose_to_posestamped/posestamped_out" to="pose_to_posestamped/posestamped_out"/>
+			
+			<param name="frame_id" value="odom"/>
+	</node>
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+
+	<node pkg="ros_conversions" name="keyboard_to_joy" type="keyboard_to_joy" output="screen">
+		<remap from="/keyboard_to_joy/joy_out" to="/joy"/>
+		
+		<rosparam command="load" file="$(find ros_conversions)/params/keyboard_to_joy.yaml" />
+	</node>
+
+</launch>

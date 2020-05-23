@@ -1,0 +1,12 @@
+buttons: ["x","a","b",
+          "y","l","r",
+          "L","R","u",
+          "i","o","p"]
+axes: ["a","d",
+       "s","w",
+       "KEY_LEFT","KEY_RIGHT",
+       "KEY_DOWN","KEY_UP",
+       "j","k",
+       "n","m"]
+
+axes_sensitivity: 1 
