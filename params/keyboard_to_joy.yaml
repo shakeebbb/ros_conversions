@@ -2,7 +2,7 @@ buttons: ["x","a","b",
           "y","l","r",
           "L","R","u",
           "i","o","p"]
-axes: ["a","d",
+axes: ["z","d",
        "s","w",
        "KEY_LEFT","KEY_RIGHT",
        "KEY_DOWN","KEY_UP",
