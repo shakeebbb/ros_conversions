@@ -6,6 +6,6 @@
 			<param name="tf_source_frame" value="base_link"/>
 			<param name="pose_frame_id" value="map"/>
 			
-			<param name="loopRate" type="double" value="50.0"/>
+			<param name="rate" type="double" value="50.0"/>
 		</node>
 </launch>
