@@ -1,0 +1,6 @@
+<launch>
+	<node name="odom_to_tf" pkg="ros_conversions" type="odom_to_tf" output="screen">
+			<remap from="~/odom_topic" to="/ground_truth/state"/>
+
+		</node>
+</launch>

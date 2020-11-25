@@ -141,6 +141,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
  add_executable(keyboard_to_joy src/keyboard_to_joy.cpp)
  add_executable(tf_to_pose src/tf_to_pose.cpp)
+ add_executable(odom_to_tf src/odom_to_tf.cpp)
  add_executable(pose_to_posestamped src/pose_to_posestamped.cpp)
 
 ## Rename C++ executable without prefix
@@ -159,6 +160,10 @@ include_directories(
    ${CURSES_LIBRARIES}
  )
  target_link_libraries(tf_to_pose
+   ${catkin_LIBRARIES}
+   ${CURSES_LIBRARIES}
+ )
+ target_link_libraries(odom_to_tf
    ${catkin_LIBRARIES}
    ${CURSES_LIBRARIES}
  )
