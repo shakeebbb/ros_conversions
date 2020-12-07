@@ -143,6 +143,7 @@ include_directories(
  add_executable(tf_to_pose src/tf_to_pose.cpp)
  add_executable(odom_to_tf src/odom_to_tf.cpp)
  add_executable(pose_to_posestamped src/pose_to_posestamped.cpp)
+ add_executable(twist_to_twiststamped src/twist_to_twiststamped.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -168,6 +169,10 @@ include_directories(
    ${CURSES_LIBRARIES}
  )
  target_link_libraries(pose_to_posestamped
+   ${catkin_LIBRARIES}
+   ${CURSES_LIBRARIES}
+ )
+ target_link_libraries(twist_to_twiststamped
    ${catkin_LIBRARIES}
    ${CURSES_LIBRARIES}
  )

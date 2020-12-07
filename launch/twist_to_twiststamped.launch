@@ -1,0 +1,11 @@
+<launch>
+	<node name="twist_to_twiststamped" pkg="ros_conversions" type="twist_to_twiststamped" output="screen">
+			<remap from="twist_to_twiststamped/twist_in" to="ground_truth/twist"/>
+			<remap from="twist_to_twiststamped/twiststamped_in" to="abc"/>
+			
+			<remap from="twist_to_twiststamped/twist_out" to="twist_to_twiststamped/twist_out"/>
+			<remap from="twist_to_twiststamped/twiststamped_out" to="mavros/local_position/twist"/>
+			
+			<param name="frame_id" value="world"/>
+	</node>
+</launch>
