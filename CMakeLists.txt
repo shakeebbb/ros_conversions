@@ -140,6 +140,8 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
  add_executable(keyboard_to_joy src/keyboard_to_joy.cpp)
+ add_executable(scan_to_scan src/scan_to_scan.cpp)
+ add_executable(vel_to_vel src/vel_to_vel.cpp)
  add_executable(tf_to_pose src/tf_to_pose.cpp)
  add_executable(odom_to_tf src/odom_to_tf.cpp)
  add_executable(pose_to_posestamped src/pose_to_posestamped.cpp)
@@ -173,6 +175,14 @@ include_directories(
    ${CURSES_LIBRARIES}
  )
  target_link_libraries(twist_to_twiststamped
+   ${catkin_LIBRARIES}
+   ${CURSES_LIBRARIES}
+ )
+ target_link_libraries(scan_to_scan
+   ${catkin_LIBRARIES}
+   ${CURSES_LIBRARIES}
+ )
+ target_link_libraries(vel_to_vel
    ${catkin_LIBRARIES}
    ${CURSES_LIBRARIES}
  )

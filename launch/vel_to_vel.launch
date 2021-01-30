@@ -1,0 +1,9 @@
+<launch>
+	<node name="vel_to_vel" pkg="ros_conversions" type="vel_to_vel" output="screen">
+			<remap from="~/twist_in" to="wav_nav/cmd_vel"/>
+      <remap from="~/twist_out" to="cmd_vel"/>
+			
+			<param name="output_rate_hz" value="50"/>
+
+		</node>
+</launch>
