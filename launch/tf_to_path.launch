@@ -1,0 +1,16 @@
+<launch>
+  <arg name="mav_name" default="$(env ROS_NAMESPACE)"/>
+  <arg name="world_frame" default="world"/>
+  <arg name="base_frame" default="base_link"/>
+
+	<node name="tf_to_path" pkg="ros_conversions" type="tf_to_path" output="screen">
+			<remap from="~/path_topic" to="/$(arg mav_name)/pose_history"/>
+			
+			<param name="~/tf_target_frame" type="string" value="world"/>
+			<param name="~/tf_source_frame" type="string" value="$(arg base_frame)"/>
+			<param name="~/path_frame_id" type="string" value="$(arg world_frame)"/>
+      <param name="~/distance_seperation" type="double" value="0.5"/>
+			
+      <param name="~/publish_rate_hz" type="double" value="1.0"/>
+		</node>
+</launch>
