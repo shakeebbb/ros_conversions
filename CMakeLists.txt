@@ -147,6 +147,7 @@ include_directories(
  add_executable(pose_to_posestamped src/pose_to_posestamped.cpp)
  add_executable(twist_to_twiststamped src/twist_to_twiststamped.cpp)
  add_executable(tf_to_path src/tf_to_path.cpp)
+ add_executable(path_transformer src/path_transformer.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -190,6 +191,9 @@ include_directories(
  target_link_libraries(tf_to_path
    ${catkin_LIBRARIES}
    ${CURSES_LIBRARIES}
+ )
+ target_link_libraries(path_transformer
+   ${catkin_LIBRARIES}
  )
 
 #############
