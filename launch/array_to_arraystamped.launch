@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="scenario" default="scenario_1"/> 
+  <arg name="run" default="scen1_2"/> 
+
+	<node name="array_to_arraystamped" pkg="ros_conversions" type="array_to_arraystamped" output="screen">
+			<remap from="array_to_arraystamped/array_in" to="/wav_nav/status_out"/>
+			<remap from="array_to_arraystamped/arraystamped_out" to="/wav_nav/status_stamped_out"/>
+	</node>
+
+  <node pkg="rosbag" type="play" name="player" args="--clock /home/shakeeb/Downloads/wav_nav_bags/$(arg scenario)/$(arg run).bag" output="screen" />
+  <node pkg="rosbag" type="record" name="recorder" args="/wav_nav/status_stamped_out /wav_nav/status_out /vrpn_client_node/jackal/pose /scan -O /home/shakeeb/Downloads/wav_nav_bags/$(arg scenario)/Modified/$(arg run).bag" output="screen"/>
+
+</launch>
